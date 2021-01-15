@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-import os.path
+import os
 
 #create a todo list
 print("########## --> KREATION'S TODO-LIST <-- ##########")
 print("########## --> CREATE YOUR DAILY LIST <-- ########## \n")
 
-#This next two lines asks the user's Username
-ur = input("Provide Pc Username(Case Sensitive):")
-def_directory = "/home/" + ur + "/Documents"
-
+def_directory = os.getenv("HOME") +  "/Documents"
 
 def fi_le():
     x = int(input("Enter The Length of Your To-Do-List: "))
@@ -52,7 +49,7 @@ def dir_check():
         fi_le()
 
     elif ask_user == "C":
-        user_folder_name = ("/home/" + ur + "/" + input("Specify Folder name: "))
+        user_folder_name = (os.getenv("HOME") + input("Specify Folder name: "))
         def_directory = user_folder_name
         fi_le()
 
